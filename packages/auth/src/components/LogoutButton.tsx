@@ -14,7 +14,11 @@ const LogoutButton: React.FC = () => {
     dispatch({ type: LOGOUT });
   };
 
-  return <Button onClick={handleLogout}>Logout</Button>;
+  return (
+    <button className="w-full h-full text-start" onClick={handleLogout}>
+      Logout
+    </button>
+  );
 };
 
 export default LogoutButton;

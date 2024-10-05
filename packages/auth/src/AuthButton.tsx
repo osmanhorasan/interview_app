@@ -1,28 +1,24 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import Grid from "@mui/material/Grid2";
-import { Avatar, Box, Button, Link } from "@mui/material";
+import { Avatar, Box, Link } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { deepOrange } from "@mui/material/colors";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
+import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
 const AuthButton = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  const { logout } = useAuth0();
-  const { loginWithRedirect } = useAuth0();
+  const auth = useSelector((state: RootState) => state.auth); // Auth bilgilerini Redux store'dan alıyoruz
+  const { user, isAuthenticated, token } = auth;
 
-  if (isLoading) {
-    return <div>Loading ...</div>;
-  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
@@ -32,15 +28,12 @@ const AuthButton = () => {
           </Grid>
         ) : (
           <Grid size={"auto"}>
-            <Button
+            <Avatar
               id="basic-button"
-              aria-controls={open ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-            >
-              <Avatar alt="Remy Sharp" src={`${user?.picture}`} />
-            </Button>
+              onClick={(event) => handleClick(event)}
+              src={`${user?.picture}`}
+              className="cursor-pointer"
+            />
 
             <Menu
               id="basic-menu"
@@ -52,10 +45,17 @@ const AuthButton = () => {
               }}
             >
               <MenuItem onClick={handleClose}>
-                <Link href="/account">{user?.name}</Link>
+                <Link className="!no-underline !text-gray-900" href="/account">
+                  {user?.name}
+                </Link>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <Link href="/dashboard">{"Dashboard"}</Link>
+                <Link
+                  className="!no-underline !text-gray-900"
+                  href="/dashboard"
+                >
+                  {"Dashboard"}
+                </Link>
               </MenuItem>
               <MenuItem
                 onClick={() => {
