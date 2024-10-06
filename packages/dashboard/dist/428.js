@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdashboard=self.webpackChunkdashboard||[]).push([[428],{1428:(e,t,a)=>{a.r(t),a.d(t,{default:()=>n});var s=a(5641),l=a.n(s);const n=function(){return l().createElement("div",{className:"h-full w-full flex items-center justify-center text-2xl"},"ComicsPage   ( Bu Sayfa Route Denemesi İçin Yapılmıştır. )")}}}]);

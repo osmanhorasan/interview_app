@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkauth=self.webpackChunkauth||[]).push([[344],{6344:(n,e,t)=>{t.r(e),t.d(e,{default:()=>r});var a=t(5641),u=t.n(a);const r=function(){return u().createElement("div",null,"Horasanın Companneti")}}}]);
