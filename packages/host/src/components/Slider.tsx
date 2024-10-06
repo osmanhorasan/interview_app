@@ -4,9 +4,9 @@ import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 function Slider() {
   const [images, setImages] = useState([
-    "https://picsum.photos/id/237/1200",
-    "https://picsum.photos/id/250/1200",
-    "https://picsum.photos/id/258/1200",
+    "https://www.arcanemgz.com/wp-content/uploads/2016/09/marvel-logo-wallpaper.jpg",
+    "https://mrwallpaper.com/images/hd/get-ready-for-an-exciting-new-adventure-with-marvel-tra5eupbzbkcvoya.jpg",
+    "https://www.komar.de/media/cms/fileadmin/user_upload/Category/Fototapeten/Marvel/komar-fototapeten-marvel.jpg",
   ]);
   const [activeIndex, setActiveIndex] = useState(0);
 

@@ -44,18 +44,11 @@ const AuthButton = () => {
                 "aria-labelledby": "basic-button",
               }}
             >
-              <MenuItem onClick={handleClose}>
-                <Link className="!no-underline !text-gray-900" href="/account">
-                  {user?.name}
-                </Link>
+              <MenuItem onClick={handleClose} href="/account">
+                {user?.name}
               </MenuItem>
-              <MenuItem onClick={handleClose}>
-                <Link
-                  className="!no-underline !text-gray-900"
-                  href="/dashboard"
-                >
-                  {"Dashboard"}
-                </Link>
+              <MenuItem onClick={handleClose} href="/dashboard">
+                {"Dashboard"}
               </MenuItem>
               <MenuItem
                 onClick={() => {

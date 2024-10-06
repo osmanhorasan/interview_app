@@ -52,7 +52,7 @@ const LoginButton: React.FC = () => {
     fetchUserData();
   }, [isAuthenticated]);
 
-  return <Button onClick={handleLogin}>Login</Button>;
+  return <Button onClick={handleLogin} variant="contained">Login</Button>;
 };
 
 export default LoginButton;

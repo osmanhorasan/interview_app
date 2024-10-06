@@ -15,7 +15,7 @@ const LogoutButton: React.FC = () => {
   };
 
   return (
-    <button className="w-full h-full text-start" onClick={handleLogout}>
+    <button className="!text-start" onClick={handleLogout}>
       Logout
     </button>
   );

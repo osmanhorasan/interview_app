@@ -15,3 +15,16 @@ declare module "authApp/Auth0ProviderWithNavigate" {
 declare module "authApp/RootState" {
 	export type State = RootState;
 }
+
+declare module "dashboardApp/DashboardContainer" {
+	import { ComponentType } from "react";
+	interface Props { }
+	const DashboardContainer: ComponentType<Props>;
+	export default DashboardContainer
+}
+declare module "accountApp/AccountPage" {
+	import { ComponentType } from "react";
+	interface Props { }
+	const AccountPage: ComponentType<Props>;
+	export default AccountPage
+}
