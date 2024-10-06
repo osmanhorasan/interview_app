@@ -19,16 +19,31 @@ This project is a micro frontend project. This project uses simple bit auth0 and
 2. Install frontend dependencies:
     ```bash
     npm install
+    packages/auth -> npm install
+    packages/account ->  npm install
+    packages/dashboard ->  npm install
+    packages/host ->  npm install   
     ```
 
 3. Configure the `.env` file
 
-
-6. start application:
+4. build application:
     ```bash
-    npm run build
-    npm run start
+    packages/auth -> npm build
+    packages/account ->  npm build
+    packages/dashboard ->  npm build
+    packages/host ->  npm build 
     ```
+
+5. start application:
+    ```bash
+    packages/auth -> npm start
+    packages/account ->  npm start
+    packages/dashboard ->  npm start
+    packages/host ->  npm start 
+    ```
+
+6. localhost:3000
 
 ## Usage
 
